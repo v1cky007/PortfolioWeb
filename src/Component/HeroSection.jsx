@@ -8,7 +8,7 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { AuroraText } from "../components/magicui/aurora-text";
-import profileImage from "@/assets/profile.jpeg";
+import profileImage from "@/assets/Profile.jpeg";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { useLenis } from "./LenisContext";
   // Import your Lenis hook
