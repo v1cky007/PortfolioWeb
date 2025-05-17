@@ -1,0 +1,159 @@
+/* General Section Styling */
+.about-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #000;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.about-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.about-heading span {
+  color: #BF00FF;
+}
+
+/* Subheading */
+.about-subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #BF00FF;
+  animation: pulse 2s infinite;
+}
+
+/* Paragraphs */
+.about-text {
+  color: #ccc;
+  transition: color 0.5s ease;
+}
+
+.about-text:hover {
+  color: white;
+}
+
+/* Buttons */
+.about-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  justify-content: center;
+  margin: 10px;
+}
+
+@media (min-width: 640px) {
+  .about-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.btn-primary {
+  background-color: #BF00FF;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #BF00FF50;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #a000e6;
+  box-shadow: 0 0 15px #BF00FF;
+}
+
+.btn-outline {
+  border: 1px solid #BF00FF;
+  color: #BF00FF;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-outline:hover {
+  transform: scale(1.05);
+  background-color: rgba(191, 0, 255, 0.1);
+  color: white;
+  box-shadow: 0 0 15px #BF00FF66;
+}
+
+/* Feature Cards */
+.feature-card {
+  padding: 1rem;
+  background-color: #0e0e0e;
+  border-radius: 0.5rem;
+  border: 1px solid #BF00FF;
+  transition: all 0.5s ease;
+  transform: translateY(0);
+  margin: 20px;
+}
+
+.feature-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0 20px #BF00FF;
+}
+
+.feature-card .icon-box {
+  padding: 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(191, 0, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.feature-card:hover .icon-box {
+  background-color: rgba(191, 0, 255, 0.2);
+}
+
+.feature-card .icon {
+  color: #BF00FF;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover .icon {
+  transform: scale(1.1);
+}
+
+.feature-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  transition: color 0.3s;
+}
+
+.feature-card:hover .feature-card-title {
+  color: #BF00FF;
+}
+
+.feature-card-desc {
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.feature-card:hover .feature-card-desc {
+  color: #ccc;
+}
+
+/* Optional: Custom pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
