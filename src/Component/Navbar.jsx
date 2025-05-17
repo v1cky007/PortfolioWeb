@@ -1,55 +1,27 @@
-// Navbar.jsx
 import React from "react";
-import logo from "../assets/logo.png";
-import { useLenis } from "../Component/LenisContext";
+import { useLenis } from "./LenisContext";
 
 const Navbar = () => {
   const lenis = useLenis();
 
-  const handleScroll = (targetId) => {
-    const section = document.getElementById(targetId);
-    if (section && lenis) {
-      lenis.scrollTo(section);
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element && lenis) {
+      lenis.scrollTo(element.offsetTop);
+    } else if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-black bg-opacity-80 w-full">
-      <div className="flex items-center space-x-3">
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-10 h-10 rounded-full border-2 border-purple-500"
-        />
-        <h1 className="text-white text-xl font-bold">M. Vigneash</h1>
+    <nav className="fixed top-0 left-0 w-full bg-black text-white z-50 py-4 px-6 flex justify-between items-center shadow-md">
+      <div className="font-bold text-xl">Portfolio</div>
+      <div className="flex space-x-6">
+        <button onClick={() => handleScroll("about")} className="hover:text-purple-400 transition">About</button>
+        <button onClick={() => handleScroll("skills")} className="hover:text-purple-400 transition">Skills</button>
+        <button onClick={() => handleScroll("projects")} className="hover:text-purple-400 transition">Projects</button>
+        <button onClick={() => handleScroll("contact")} className="hover:text-purple-400 transition">Contact</button>
       </div>
-
-      <ul className="flex space-x-6 text-white">
-        <li
-          className="cursor-pointer hover:text-purple-400"
-          onClick={() => handleScroll("home")}
-        >
-          Home
-        </li>
-        <li
-          className="cursor-pointer hover:text-purple-400"
-          onClick={() => handleScroll("about")}
-        >
-          About Me
-        </li>
-        <li
-          className="cursor-pointer hover:text-purple-400"
-          onClick={() => handleScroll("projects")}
-        >
-          Projects
-        </li>
-        <li
-          className="cursor-pointer hover:text-purple-400"
-          onClick={() => handleScroll("contact")}
-        >
-          Contact
-        </li>
-      </ul>
     </nav>
   );
 };

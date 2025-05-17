@@ -43,65 +43,67 @@ const SkillsSection = () => {
   );
 
   return (
-    <div className="skills-wrapper">
-      {/* Left Orbiting */}
-      <div className="left-skills">
-        <OrbitingCircles radius={220} className="orbiting-circles">
-          {outer.map((logo, index) => (
-            <div key={`outer-${index}`} className="orbit-icon-wrapper">
-              <img src={logo.src} alt={logo.alt} className="icon" />
-              <span className="tooltip">{logo.alt}</span>
-            </div>
-          ))}
-        </OrbitingCircles>
-        <OrbitingCircles radius={150} reverse className="orbiting-circles">
-          {middle.map((logo, index) => (
-            <div key={`middle-${index}`} className="orbit-icon-wrapper">
-              <img src={logo.src} alt={logo.alt} className="icon" />
-              <span className="tooltip">{logo.alt}</span>
-            </div>
-          ))}
-        </OrbitingCircles>
-        <OrbitingCircles radius={80} className="orbiting-circles">
-          {inner.map((logo, index) => (
-            <div key={`inner-${index}`} className="orbit-icon-wrapper">
-              <img src={logo.src} alt={logo.alt} className="icon" />
-              <span className="tooltip">{logo.alt}</span>
-            </div>
-          ))}
-        </OrbitingCircles>
-      </div>
-
-      {/* Right Progress Bars */}
-      <div className="right-skills">
-        <h2 className="progress-title">Skills</h2>
-        <div className="categories">
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "category-btn",
-                activeCategory === category ? "active" : ""
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <div className="progress-bars">
-          {filteredSkills.map((skill, key) => (
-            <div key={key} className="skill-card">
-              <div className="skill-name">{skill.name}</div>
-              <div className="skill-bar-bg">
-                <div className="skill-bar-fill" style={{ width: skill.level + "%" }} />
+    <section id="skills"> {/* Added this id to enable scroll */}
+      <div className="skills-wrapper">
+        {/* Left Orbiting */}
+        <div className="left-skills">
+          <OrbitingCircles radius={220} className="orbiting-circles">
+            {outer.map((logo, index) => (
+              <div key={`outer-${index}`} className="orbit-icon-wrapper">
+                <img src={logo.src} alt={logo.alt} className="icon" />
+                <span className="tooltip">{logo.alt}</span>
               </div>
-              <div className="skill-percent">{skill.level}%</div>
-            </div>
-          ))}
+            ))}
+          </OrbitingCircles>
+          <OrbitingCircles radius={150} reverse className="orbiting-circles">
+            {middle.map((logo, index) => (
+              <div key={`middle-${index}`} className="orbit-icon-wrapper">
+                <img src={logo.src} alt={logo.alt} className="icon" />
+                <span className="tooltip">{logo.alt}</span>
+              </div>
+            ))}
+          </OrbitingCircles>
+          <OrbitingCircles radius={80} className="orbiting-circles">
+            {inner.map((logo, index) => (
+              <div key={`inner-${index}`} className="orbit-icon-wrapper">
+                <img src={logo.src} alt={logo.alt} className="icon" />
+                <span className="tooltip">{logo.alt}</span>
+              </div>
+            ))}
+          </OrbitingCircles>
+        </div>
+
+        {/* Right Progress Bars */}
+        <div className="right-skills">
+          <h2 className="progress-title">Skills</h2>
+          <div className="categories">
+            {categories.map((category, key) => (
+              <button
+                key={key}
+                onClick={() => setActiveCategory(category)}
+                className={cn(
+                  "category-btn",
+                  activeCategory === category ? "active" : ""
+                )}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className="progress-bars">
+            {filteredSkills.map((skill, key) => (
+              <div key={key} className="skill-card">
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-bar-bg">
+                  <div className="skill-bar-fill" style={{ width: skill.level + "%" }} />
+                </div>
+                <div className="skill-percent">{skill.level}%</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

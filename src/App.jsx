@@ -1,5 +1,5 @@
 // App.js
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
 import LandingPage from './Component/LandingPage';
 import AboutMe from './Component/AboutMe';
@@ -11,37 +11,36 @@ import { LenisContext } from './Component/LenisContext';
 import Lenis from '@studio-freight/lenis';
 
 function App() {
-  const lenisRef = useRef(null);
+  const [lenis, setLenis] = useState(null);
 
   useEffect(() => {
-    const lenis = new Lenis({
+    const lenisInstance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
     });
 
-    lenisRef.current = lenis;
+    setLenis(lenisInstance);
 
     const raf = (time) => {
-      lenis.raf(time);
+      lenisInstance.raf(time);
       requestAnimationFrame(raf);
     };
 
     requestAnimationFrame(raf);
   }, []);
 
+  if (!lenis) return null; // Wait for Lenis to be initialized
+
   return (
-    <LenisContext.Provider value={lenisRef.current}>
+    <LenisContext.Provider value={lenis}>
       <div className="min-h-screen bg-black relative text-white">
-        <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"></div>
-        <div className="relative z-10">
-          <Navbar />
-          <LandingPage />
-          <AboutMe />
-          <SkillsSection />
-          <ProjectsSection />
-          <ContactSection />
-        </div>
+        <Navbar />
+        <LandingPage />
+        <AboutMe />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
       </div>
     </LenisContext.Provider>
   );
