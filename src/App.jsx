@@ -9,6 +9,7 @@ import { ProjectsSection } from './Component/ProjectsSection';
 import { ContactSection } from './Component/ContactSection';
 import { LenisContext } from './Component/LenisContext';
 import Lenis from '@studio-freight/lenis';
+import Journey from './Component/Journey';
 
 function App() {
   const [lenis, setLenis] = useState(null);
@@ -39,6 +40,7 @@ function App() {
         <LandingPage />
         <AboutMe />
         <SkillsSection />
+        <Journey/>
         <ProjectsSection />
         <ContactSection />
       </div>
