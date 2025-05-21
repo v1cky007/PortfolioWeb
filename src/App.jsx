@@ -39,8 +39,8 @@ function App() {
         <Navbar />
         <LandingPage />
         <AboutMe />
-        <SkillsSection />
         <Journey/>
+        <SkillsSection />
         <ProjectsSection />
         <ContactSection />
       </div>
