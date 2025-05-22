@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLenis } from "./LenisContext";
 import logo from "@/assets/logo.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu, X } from "lucide-react"; // For hamburger icon
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const lenis = useLenis();
@@ -15,7 +15,7 @@ const Navbar = () => {
     } else if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setMenuOpen(false); // close menu on navigation
+    setMenuOpen(false); 
   };
 
   return (
@@ -27,7 +27,7 @@ const Navbar = () => {
             <AvatarImage src={logo} alt="Logo" />
             <AvatarFallback>MV</AvatarFallback>
           </Avatar>
-          <span className="text-xl font-semibold">M. Vigneash</span>
+          <span className="text-xl font-semibold">M.Vigneash</span>
         </div>
 
         {/* Right - Links */}

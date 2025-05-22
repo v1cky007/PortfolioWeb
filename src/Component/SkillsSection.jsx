@@ -38,14 +38,11 @@ const categories = ["Frontend/Backend", "Tools", "Coding"];
 
 const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("Frontend/Backend");
-  const filteredSkills = skills.filter(
-    (skill) => skill.category === activeCategory
-  );
+  const filteredSkills = skills.filter(skill => skill.category === activeCategory);
 
   return (
-    <section id="skills"> {/* Added this id to enable scroll */}
+    <section id="skills">
       <div className="skills-wrapper">
-        {/* Left Orbiting */}
         <div className="left-skills">
           <OrbitingCircles radius={220} className="orbiting-circles">
             {outer.map((logo, index) => (
@@ -73,7 +70,6 @@ const SkillsSection = () => {
           </OrbitingCircles>
         </div>
 
-        {/* Right Progress Bars */}
         <div className="right-skills">
           <h2 className="progress-title">Skills</h2>
           <div className="categories">
@@ -81,10 +77,7 @@ const SkillsSection = () => {
               <button
                 key={key}
                 onClick={() => setActiveCategory(category)}
-                className={cn(
-                  "category-btn",
-                  activeCategory === category ? "active" : ""
-                )}
+                className={cn("category-btn", activeCategory === category ? "active" : "")}
               >
                 {category}
               </button>

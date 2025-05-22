@@ -20,21 +20,6 @@
   position: absolute;
 }
 
-.center-title {
-  position: absolute;
-  z-index: 10;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.center-title h2 {
-  font-size: large;
-  font-weight: 800;
-  color: #BF00FF;
-}
-
 .icon {
   width: 48px;
   height: 48px;
@@ -62,8 +47,7 @@
   flex-wrap: wrap;
 }
 
-.category-btn,
-.cat-button {
+.category-btn {
   border: 1px solid #BF00FF;
   color: #BF00FF;
   padding: 0.5rem 1.5rem;
@@ -71,14 +55,12 @@
   transition: transform 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.category-btn.active,
-.cat-button.active {
+.category-btn.active {
   background-color: #9A00CC;
   color: black;
 }
 
-.category-btn:hover,
-.cat-button:hover {
+.category-btn:hover {
   transform: scale(1.05);
   background-color: rgba(191, 0, 255, 0.1);
   color: white;
@@ -164,7 +146,6 @@
   color: #E5CCFF;
 }
 
-/* Orbiting Tooltip */
 .orbit-icon-wrapper {
   position: relative;
   display: inline-block;
@@ -189,30 +170,13 @@
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
   white-space: nowrap;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .orbit-icon-wrapper:hover .tooltip {
   visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
-}
-
-/* Fade-in with upward motion */
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.skill-card.animate-in {
-  animation: fadeSlideIn 0.6s ease forwards;
 }
