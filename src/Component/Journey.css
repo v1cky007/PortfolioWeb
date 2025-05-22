@@ -17,7 +17,6 @@
   color: #fff;
 }
 
-/* Only "Journey" is colored */
 .journey-title span {
   color: #BF00FF;
 }
@@ -64,11 +63,9 @@
   box-shadow: 0 0 12px rgba(191, 0, 255, 0.25);
   position: relative;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
 }
 
-/* Glow on hover for entire card (optional) */
+/* Glow on hover */
 .timeline-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
@@ -95,7 +92,7 @@
   margin-bottom: 10px;
 }
 
-/* Timeline heading hover animation ONLY here */
+/* Timeline heading */
 .timeline-box h4 {
   font-size: 1.3rem;
   font-weight: 600;
@@ -116,16 +113,4 @@
 .timeline-box p {
   font-size: 1rem;
   color: #cccccc;
-}
-
-/* Entry animation */
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
 }

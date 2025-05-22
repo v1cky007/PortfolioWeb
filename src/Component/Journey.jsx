@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Journey.css';
 
 const Journey = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   const educationData = [
     {
       year: '2022 - 2026',
@@ -39,9 +45,14 @@ const Journey = () => {
       <div className="journey-sections">
         <div className="journey-column">
           <h3>Education</h3>
-          <div className="timeline">
+          <div className="timeline education">
             {educationData.map((item, index) => (
-              <div key={index} className="timeline-box">
+              <div
+                key={index}
+                className="timeline-box"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
+              >
                 <span className="timeline-date">📅 {item.year}</span>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
@@ -51,9 +62,14 @@ const Journey = () => {
         </div>
         <div className="journey-column">
           <h3>Experience</h3>
-          <div className="timeline">
+          <div className="timeline experience">
             {experienceData.map((item, index) => (
-              <div key={index} className="timeline-box">
+              <div
+                key={index}
+                className="timeline-box"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
+              >
                 <span className="timeline-date">📅 {item.year}</span>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
