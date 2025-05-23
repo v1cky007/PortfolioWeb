@@ -52,6 +52,7 @@ const SkillsSection = () => {
               </div>
             ))}
           </OrbitingCircles>
+
           <OrbitingCircles radius={150} reverse className="orbiting-circles">
             {middle.map((logo, index) => (
               <div key={`middle-${index}`} className="orbit-icon-wrapper">
@@ -60,6 +61,7 @@ const SkillsSection = () => {
               </div>
             ))}
           </OrbitingCircles>
+
           <OrbitingCircles radius={80} className="orbiting-circles">
             {inner.map((logo, index) => (
               <div key={`inner-${index}`} className="orbit-icon-wrapper">
@@ -83,12 +85,13 @@ const SkillsSection = () => {
               </button>
             ))}
           </div>
+
           <div className="progress-bars">
             {filteredSkills.map((skill, key) => (
               <div key={key} className="skill-card">
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-bar-bg">
-                  <div className="skill-bar-fill" style={{ width: skill.level + "%" }} />
+                  <div className="skill-bar-fill" style={{ width: `${skill.level}%` }} />
                 </div>
                 <div className="skill-percent">{skill.level}%</div>
               </div>
