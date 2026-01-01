@@ -6,50 +6,80 @@
 
 ## 📌 Introduction
 
-This is my personal portfolio webpage designed to showcase my projects, technical skills, and professional profile. The website serves as an online resume and project gallery, helping recruiters, collaborators, and peers understand my background, interests, and work in software development and cybersecurity.
+This repository contains the source code for my personal portfolio website.  
+The portfolio is designed to showcase my **projects**, **technical skills**, and **professional interests** in software development and cybersecurity. It serves as a centralized platform for recruiters, collaborators, and peers to explore my work and understand my technical capabilities.
 
 ---
 
 ## 🛠️ Skills & Technologies
 
 ### Core Skills
-- Software Development
-- Web Development
-- Cybersecurity Fundamentals
-- Problem Solving & Debugging
+- Full Stack Web Development  
+- Backend API Development  
+- Database Design & Management  
+- Real-Time Applications  
+- Secure Application Design  
 
 ### Technologies Used
-- **Frontend:** React, JavaScript (ES6+)
-- **Styling:** HTML5, CSS3 (Responsive Design)
-- **Build Tools:** Vite / Create React App
+- **Frontend:** React, HTML5, CSS3, JavaScript (ES6+)
+- **Backend:** Spring Boot, Node.js
+- **Databases:** MySQL, MongoDB
+- **Real-Time Tech:** WebSockets
+- **Payments:** Stripe
 - **Version Control:** Git & GitHub
 - **Deployment:** Vercel
 
 ---
 
-## 💼 Key Projects
+## 💼 Featured Projects
 
-### 🔐 Blockchain Integrated Steganography with ML Integrity Checker
-- Secure data hiding using steganography
-- Blockchain for tamper-proof integrity verification
-- Machine learning for detecting data manipulation
+### 🏠 EstateFlow
+**Technologies:** React, Spring Boot, MySQL, AI  
 
-### 🏥 MediChain – Secure Healthcare Data Sharing
-- Blockchain-based consent management
-- Policy-driven doctor access
-- Encrypted medical record storage
+A comprehensive house brokerage platform featuring:
+- AI-based property recommendations  
+- Advanced property search and filtering  
+- Interactive dashboards for users and agents  
+- Scalable backend with secure data handling  
 
-### 🌐 Networking & Cybersecurity Projects
-- Secure communication protocols
-- Threat detection and mitigation concepts
-- Academic and experimental implementations
+🔗 *Project link available on GitHub*
 
-👉 Full project details are available on the portfolio website:  
+---
+
+### 🎮 Vortex Play
+**Technologies:** HTML, CSS, JavaScript, WebSockets  
+
+A cloud-based gaming platform that includes:
+- Real-time multiplayer gameplay  
+- WebSocket-based live communication  
+- Performance optimizations for smooth play  
+- Interactive leaderboards and rankings  
+
+🔗 *Project link available on GitHub*
+
+---
+
+### 🛒 Grocery Store Website
+**Technologies:** React, Node.js, MongoDB, Stripe  
+
+A full-featured e-commerce platform for grocery shopping:
+- Secure online payments using Stripe  
+- Real-time order tracking  
+- Responsive and user-friendly UI/UX  
+- Scalable backend architecture  
+
+🔗 *Project link available on GitHub*
+
+---
+
+👉 More project details can be found on my portfolio:  
 https://portfolio-mauve-two-21.vercel.app/
 
 ---
 
-## 🚀 Run the Project Locally
+## 🚀 Running the Project Locally
+
+If you want to run this portfolio website locally:
 
 ### Prerequisites
 - Node.js (v16 or above)
@@ -58,17 +88,17 @@ https://portfolio-mauve-two-21.vercel.app/
 
 ### Steps
 
-1. Clone the repository
+1. **Clone the repository**
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 ```
 
-2. Navigate to the project directory
+2. **Navigate to the project directory**
 ```bash
 cd your-repo-name
 ```
 
-3. Install dependencies
+3. **Install dependencies**
 ```bash
 npm install
 ```
@@ -77,7 +107,7 @@ or
 yarn install
 ```
 
-4. Start the development server
+4. **Start the development server**
 ```bash
 npm run dev
 ```
@@ -86,14 +116,15 @@ or
 npm start
 ```
 
-5. Open in browser
+5. **Open in your browser**
 ```
 http://localhost:5173
 ```
+*(Port may vary depending on setup)*
 
 ---
 
-## 📬 Contact & Social Profiles
+## 📬 Contact & Social Links
 
 - **GitHub:** https://github.com/your-username  
 - **LinkedIn:** https://linkedin.com/in/your-profile  
@@ -102,12 +133,13 @@ http://localhost:5173
 
 ---
 
-## 📝 Additional Notes
+## 📝 Additional Notes & Acknowledgments
 
-- Inspired by modern developer portfolio designs
-- Built for academic and professional use
-- Deployed using **Vercel**
+- Designed with a modern dark UI theme for better readability  
+- Project cards inspired by real-world product showcases  
+- Built for academic, professional, and recruiter evaluation  
+- Deployed using **Vercel**  
 
 ---
 
-⭐ If you like this project, feel free to star the repository!
+⭐ *If you find this portfolio useful, feel free to star the repository!*
