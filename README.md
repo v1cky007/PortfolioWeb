@@ -1,124 +1,113 @@
 # Personal Portfolio Website
 
-🔗 Live Website: https://portfolio-mauve-two-21.vercel.app/
+🔗 **Live Website:** https://portfolio-mauve-two-21.vercel.app/
+
+---
 
 ## 📌 Introduction
 
-This portfolio website serves as a personal professional showcase, highlighting my skills, projects, and background as a Computer Science student with an interest in software development and cybersecurity. The website is designed to provide recruiters, peers, and collaborators with a clear overview of my technical abilities, experience, and work in a clean and accessible format.
+This is my personal portfolio webpage designed to showcase my projects, technical skills, and professional profile. The website serves as an online resume and project gallery, helping recruiters, collaborators, and peers understand my background, interests, and work in software development and cybersecurity.
 
-## 🛠️ Technologies & Frameworks Used
+---
 
-The portfolio is built using modern web development technologies to ensure performance, responsiveness, and scalability.
+## 🛠️ Skills & Technologies
 
-- **Frontend Framework:** React (with modern component-based architecture)
-- **Styling:** HTML5, CSS3 (Flexbox / Grid), responsive design principles
-- **Programming Language:** JavaScript (ES6+)
-- **Build Tool / Bundler:** Vite or Create React App (depending on setup)
-- **Hosting & Deployment:** Vercel
+### Core Skills
+- Software Development
+- Web Development
+- Cybersecurity Fundamentals
+- Problem Solving & Debugging
+
+### Technologies Used
+- **Frontend:** React, JavaScript (ES6+)
+- **Styling:** HTML5, CSS3 (Responsive Design)
+- **Build Tools:** Vite / Create React App
 - **Version Control:** Git & GitHub
+- **Deployment:** Vercel
 
-> ⚠️ Note: If you adapt this repository, the exact framework or tooling may vary slightly based on your configuration.
+---
 
-## 🚀 Getting Started (Run Locally)
+## 💼 Key Projects
 
-Follow the steps below to set up and run the project on your local machine.
+### 🔐 Blockchain Integrated Steganography with ML Integrity Checker
+- Secure data hiding using steganography
+- Blockchain for tamper-proof integrity verification
+- Machine learning for detecting data manipulation
+
+### 🏥 MediChain – Secure Healthcare Data Sharing
+- Blockchain-based consent management
+- Policy-driven doctor access
+- Encrypted medical record storage
+
+### 🌐 Networking & Cybersecurity Projects
+- Secure communication protocols
+- Threat detection and mitigation concepts
+- Academic and experimental implementations
+
+👉 Full project details are available on the portfolio website:  
+https://portfolio-mauve-two-21.vercel.app/
+
+---
+
+## 🚀 Run the Project Locally
 
 ### Prerequisites
-
-Ensure you have the following installed:
-
-- Node.js (v16 or above recommended)
+- Node.js (v16 or above)
 - npm or yarn
 - Git
 
-### Installation Steps
+### Steps
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-Navigate to the project directory
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+```
 
-bash
-Copy code
+2. Navigate to the project directory
+```bash
 cd your-repo-name
-Install dependencies
+```
 
-bash
-Copy code
+3. Install dependencies
+```bash
 npm install
+```
 or
-
-bash
-Copy code
+```bash
 yarn install
-Start the development server
+```
 
-bash
-Copy code
+4. Start the development server
+```bash
 npm run dev
+```
 or
-
-bash
-Copy code
+```bash
 npm start
-Open in browser
+```
 
-arduino
-Copy code
+5. Open in browser
+```
 http://localhost:5173
-(Port may vary depending on the setup)
+```
 
-Build for Production
-bash
-Copy code
-npm run build
-✨ Key Features & Sections
-Home / Landing Section
+---
 
-Brief introduction and personal branding
+## 📬 Contact & Social Profiles
 
-About Me
+- **GitHub:** https://github.com/your-username  
+- **LinkedIn:** https://linkedin.com/in/your-profile  
+- **Email:** your-email@example.com  
+- **Portfolio:** https://portfolio-mauve-two-21.vercel.app/
 
-Academic background, interests, and career focus
+---
 
-Skills
+## 📝 Additional Notes
 
-Technical skills including programming languages, tools, and frameworks
+- Inspired by modern developer portfolio designs
+- Built for academic and professional use
+- Deployed using **Vercel**
 
-Projects
+---
 
-Showcase of academic and personal projects with descriptions
-
-Experience / Internships
-
-Internship and hands-on experience details
-
-Contact Section
-
-Ways to connect professionally
-
-Responsive Design
-
-Optimized for desktop, tablet, and mobile devices
-
-🙌 Credits & Acknowledgments
-Inspired by modern developer portfolio designs
-
-Icons and fonts may be sourced from open libraries such as:
-
-Google Fonts
-
-Font Awesome / Lucide Icons
-
-Hosted using Vercel
-
-📬 Contact & Social Links
-You can connect with me through the following platforms:
-
-GitHub: https://github.com/your-username
-
-LinkedIn: https://linkedin.com/in/your-profile
-
-Email: your-email@example.com
-
-Portfolio: https://portfolio-mauve-two-21.vercel.app/
+⭐ If you like this project, feel free to star the repository!
