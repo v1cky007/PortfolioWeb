@@ -1,8 +1,6 @@
 import React from "react";
 import {
   FaLinkedin,
-  FaTwitter,
-  FaInstagram,
   FaGithub,
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
@@ -71,12 +69,12 @@ const Hero = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-5 mt-6 sm:mt-8">
+          <div className="flex items-center justify-center lg:justify-start gap-5 mt-8">
             <a
               href="https://github.com/v1cky007"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white text-lg sm:text-xl transition"
+              className="text-gray-400 hover:text-white text-xl transition"
             >
               <FaGithub />
             </a>
@@ -84,31 +82,15 @@ const Hero = () => {
               href="https://www.linkedin.com/in/m-vigneash-5aa770299"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#0e76a8] text-lg sm:text-xl transition"
+              className="text-gray-400 hover:text-[#0e76a8] text-xl transition"
             >
               <FaLinkedin />
             </a>
             <a
-              href="mailto:youremail@example.com"
-              className="text-gray-400 hover:text-[#EA4335] text-lg sm:text-xl transition"
+              href="mailto:v1gneashm007@gmail.com"
+              className="text-gray-400 hover:text-[#EA4335] text-xl transition"
             >
               <HiOutlineMail />
-            </a>
-            <a
-              href="https://twitter.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#1DA1F2] text-lg sm:text-xl transition"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://instagram.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#C13584] text-lg sm:text-xl transition"
-            >
-              <FaInstagram />
             </a>
           </div>
         </div>
