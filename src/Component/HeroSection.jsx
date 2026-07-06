@@ -89,6 +89,7 @@ const Hero = () => {
             <a
               href="mailto:v1gneashm007@gmail.com"
               className="text-gray-400 hover:text-[#EA4335] text-xl transition"
+              onClick={(e) => e.stopPropagation()}
             >
               <HiOutlineMail />
             </a>
