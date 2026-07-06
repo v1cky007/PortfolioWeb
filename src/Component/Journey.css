@@ -1,0 +1,221 @@
+/* Main container */
+.journey-container {
+  padding: 80px 20px;
+  background-color: #000; /* Pure black background */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Main title */
+.journey-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.journey-title span {
+  color: #BF00FF;
+}
+
+/* Section layout */
+.journey-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Left and right columns */
+.journey-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+/* Column heading */
+.journey-column h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #BF00FF;
+  border-bottom: 2px solid #BF00FF;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Timeline bar */
+.timeline {
+  border-left: 3px solid #BF00FF;
+  padding-left: 25px;
+  position: relative;
+}
+
+/* Timeline card box */
+.timeline-box {
+  background: linear-gradient(145deg, rgba(191, 0, 255, 0.08), rgba(138, 43, 226, 0.08));
+  border: 1px solid rgba(191, 0, 255, 0.5);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(191, 0, 255, 0.25);
+  position: relative;
+}
+
+/* Left dot marker */
+.timeline-box::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: -12px;
+  width: 16px;
+  height: 16px;
+  background-color: #BF00FF;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* Date styling */
+.timeline-date {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Timeline heading */
+.timeline-box h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Timeline description */
+.timeline-box p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 1024px) {
+  .journey-container {
+    padding: 60px 15px;
+  }
+
+  .journey-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .journey-column {
+    min-width: 280px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-container {
+    padding: 50px 12px;
+  }
+
+  .journey-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .journey-sections {
+    gap: 30px;
+  }
+
+  .journey-column {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .journey-column h3 {
+    font-size: 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .timeline-box::before {
+    width: 12px;
+    height: 12px;
+    left: -10px;
+    top: 18px;
+  }
+
+  .timeline-date {
+    font-size: 0.8rem;
+  }
+
+  .timeline-box h4 {
+    font-size: 1.15rem;
+  }
+
+  .timeline-box p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-container {
+    padding: 40px 10px;
+  }
+
+  .journey-title {
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+  }
+
+  .journey-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .timeline {
+    padding-left: 18px;
+    border-left-width: 2px;
+  }
+
+  .timeline-box {
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+  }
+
+  .timeline-box::before {
+    width: 10px;
+    height: 10px;
+    left: -9px;
+    top: 15px;
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+  }
+
+  .timeline-box h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .timeline-box p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
