@@ -24,10 +24,10 @@ export const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_9mmjcge",        // EmailJS Service ID
-        "template_wynb5kc",       // EmailJS Template ID
-        e.target,                 // Form element
-        "gNzwjp2xSRH6Nl2F1"       // Public Key
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_9mmjcge",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_wynb5kc",
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "gNzwjp2xSRH6Nl2F1"
       )
       .then(
         () => {
@@ -131,6 +131,7 @@ export const ContactSection = () => {
                   name="user_name"
                   required
                   placeholder="M. Vigneash"
+                  maxLength={100}
                 />
               </div>
 
@@ -142,6 +143,7 @@ export const ContactSection = () => {
                   name="user_email"
                   required
                   placeholder="vigneash@example.com"
+                  maxLength={254}
                 />
               </div>
 
@@ -152,6 +154,7 @@ export const ContactSection = () => {
                   name="message"
                   required
                   placeholder="Hello, I'd like to discuss..."
+                  maxLength={1000}
                 />
               </div>
 
@@ -166,6 +169,11 @@ export const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      <footer className="contact-footer" role="contentinfo">
+        <p>&copy; {new Date().getFullYear()} M. Vigneash. All rights reserved.</p>
+        <p>Built with React &amp; Tailwind CSS</p>
+      </footer>
     </section>
   );
 };

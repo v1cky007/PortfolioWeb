@@ -1,0 +1,6 @@
+# robots.txt for M. Vigneash Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://portfolio-mauve-two-21.vercel.app/sitemap.xml
