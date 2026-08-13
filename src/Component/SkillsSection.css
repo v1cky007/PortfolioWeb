@@ -10,16 +10,21 @@
 }
 
 .left-skills {
-  flex: 1 1 50%;
+  flex: 1 1 40%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  min-height: 500px;
+  overflow: hidden;
 }
 
 .orbiting-circles {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .orbit-icon-wrapper {
@@ -58,13 +63,13 @@
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
 }
 
 .right-skills {
-  flex: 1 1 50%;
-  padding: 3rem 2rem;
+  flex: 1 1 55%;
+  padding: 4rem 2rem 2rem;
   overflow-y: auto;
 }
 
@@ -74,6 +79,7 @@
   margin-bottom: 2rem;
   text-align: center;
   color: #bf00ff;
+  padding-top: 1rem;
 }
 
 .categories {
