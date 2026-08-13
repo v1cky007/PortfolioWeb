@@ -9,8 +9,8 @@ function djb2Hash(str) {
   return hash >>> 0;
 }
 
-// Obfuscated password hash (vicky007&$)
-const _pwHash = djb2Hash("\x76\x69\x63\x6b\x79\x30\x30\x37\x26\x24");
+// Obfuscated password hash (vickyxadmin)
+const _pwHash = 1499743980;
 
 export function verifyPassword(input) {
   return djb2Hash(input) === _pwHash;
