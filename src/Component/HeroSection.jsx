@@ -33,7 +33,7 @@ const Hero = () => {
             I am <AuroraText>M. Vigneash</AuroraText>
           </h1>
 
-          <div className="text-[#BF00FF] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 whitespace-nowrap inline-block">
+          <div className="text-[#BF00FF] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 inline-block">
             <WordRotate
               words={[
                 "Cybersecurity Enthusiast",
