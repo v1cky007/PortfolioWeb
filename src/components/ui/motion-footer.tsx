@@ -19,14 +19,14 @@ const STYLES = `
   -webkit-font-smoothing: antialiased;
   --pill-bg-1: color-mix(in oklch, var(--foreground) 3%, transparent);
   --pill-bg-2: color-mix(in oklch, var(--foreground) 1%, transparent);
-  --pill-shadow: color-mix(in oklch, var(--background) 50%, transparent);
+  --pill-shadow: color-mix(in oklch, var(--foreground) 20%, transparent);
   --pill-highlight: color-mix(in oklch, var(--foreground) 10%, transparent);
   --pill-inset-shadow: color-mix(in oklch, var(--background) 80%, transparent);
   --pill-border: color-mix(in oklch, var(--foreground) 8%, transparent);
   --pill-bg-1-hover: color-mix(in oklch, var(--foreground) 8%, transparent);
   --pill-bg-2-hover: color-mix(in oklch, var(--foreground) 2%, transparent);
   --pill-border-hover: color-mix(in oklch, var(--foreground) 20%, transparent);
-  --pill-shadow-hover: color-mix(in oklch, var(--background) 70%, transparent);
+  --pill-shadow-hover: color-mix(in oklch, var(--foreground) 30%, transparent);
   --pill-highlight-hover: color-mix(in oklch, var(--foreground) 20%, transparent);
 }
 
@@ -270,7 +270,7 @@ export function CinematicFooter() {
           clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
         }}
       >
-        <footer className="fixed bottom-0 left-0 z-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-background text-foreground cinematic-footer-wrapper">
+        <footer className="fixed bottom-0 left-0 z-0 flex h-screen w-full flex-col justify-between overflow-hidden section-dark text-foreground cinematic-footer-wrapper">
           {/* Ambient */}
           <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
           <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none" />
@@ -284,7 +284,7 @@ export function CinematicFooter() {
           </div>
 
           {/* Marquee */}
-          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-border/50 bg-background/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
+          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-[#BF00FF]/10 bg-[var(--theme-bg)]/80 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
             <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase">
               <MarqueeItem />
               <MarqueeItem />
@@ -371,7 +371,7 @@ export function CinematicFooter() {
               © {new Date().getFullYear()} M. Vigneash. All rights reserved.
             </div>
 
-            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
+            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-[#BF00FF]/10">
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-[#BF00FF]">♥</span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>

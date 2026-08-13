@@ -90,7 +90,7 @@ const SkillsSection = () => {
     <section id="skills">
       <div className="skills-wrapper">
         <div className="left-skills">
-          <OrbitingCircles radius={180} className="orbiting-circles">
+          <OrbitingCircles radius={180} path={false} className="orbiting-circles">
             {outer.map((logo, index) => (
               <div key={`outer-${index}`} className="orbit-icon-wrapper">
                 <img src={logo.src} alt={`${logo.alt} - Technology Skill`} className="icon" loading="lazy" />
@@ -99,7 +99,7 @@ const SkillsSection = () => {
             ))}
           </OrbitingCircles>
 
-          <OrbitingCircles radius={120} reverse className="orbiting-circles">
+          <OrbitingCircles radius={120} reverse path={false} className="orbiting-circles">
             {middle.map((logo, index) => (
               <div key={`middle-${index}`} className="orbit-icon-wrapper">
                 <img src={logo.src} alt={`${logo.alt} - Technology Skill`} className="icon" loading="lazy" />
@@ -108,7 +108,7 @@ const SkillsSection = () => {
             ))}
           </OrbitingCircles>
 
-          <OrbitingCircles radius={60} className="orbiting-circles">
+          <OrbitingCircles radius={60} path={false} className="orbiting-circles">
             {inner.map((logo, index) => (
               <div key={`inner-${index}`} className="orbit-icon-wrapper">
                 <img src={logo.src} alt={`${logo.alt} - Technology Skill`} className="icon" loading="lazy" />
