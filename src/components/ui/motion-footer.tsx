@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
@@ -345,13 +346,12 @@ export function CinematicFooter() {
                 >
                   Resume
                 </MagneticButton>
-                <MagneticButton
-                  as="a"
-                  href="/blog"
-                  className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground"
+                <Link
+                  to="/blog"
+                  className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground inline-block"
                 >
                   Blog
-                </MagneticButton>
+                </Link>
                 <MagneticButton
                   as="a"
                   href="https://github.com/v1cky007"
