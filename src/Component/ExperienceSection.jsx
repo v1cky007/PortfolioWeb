@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./ExperienceSection.css";
 
 const experiences = [
@@ -100,7 +98,21 @@ const ExperienceSection = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("aos-animate");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll("[data-aos]");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -114,7 +126,7 @@ const ExperienceSection = () => {
           Experience
         </h2>
         <p className="experience-subtitle" data-aos="fade-up" data-aos-delay="150">
-          A chronological journey through my professional career and the impactful work I've contributed to.
+          A chronological journey through my professional career and the impactful work I&apos;ve contributed to.
         </p>
 
         {/* Timeline */}

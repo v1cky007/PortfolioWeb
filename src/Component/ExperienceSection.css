@@ -40,6 +40,26 @@
   }
 }
 
+/* --- AOS Replacement Animations (works with Intersection Observer) --- */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos-delay="100"] { transition-delay: 0.1s; }
+[data-aos-delay="120"] { transition-delay: 0.12s; }
+[data-aos-delay="150"] { transition-delay: 0.15s; }
+[data-aos-delay="240"] { transition-delay: 0.24s; }
+[data-aos-delay="300"] { transition-delay: 0.3s; }
+[data-aos-delay="360"] { transition-delay: 0.36s; }
+[data-aos-delay="450"] { transition-delay: 0.45s; }
+
 /* --- Section Container --- */
 .experience-section {
   padding: 100px 24px 120px;
@@ -47,7 +67,6 @@
   color: var(--theme-text);
   font-family: 'Poppins', sans-serif;
   position: relative;
-  overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
