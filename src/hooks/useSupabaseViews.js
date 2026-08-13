@@ -17,26 +17,29 @@ export function useRecordView(postId) {
     if (sessionStorage.getItem(key)) return;
 
     async function record() {
+      // Fire and forget - don't block rendering
       if (isSupabaseConfigured() && (await checkTablesExist())) {
-        // Record in Supabase
-        await supabase.from("page_views").insert({
+        // Record in Supabase (non-blocking)
+        supabase.from("page_views").insert({
           post_id: postId,
           viewed_at: new Date().toISOString(),
-        });
-
-        // Increment post view count
-        const { data: post } = await supabase
-          .from("posts")
-          .select("views")
-          .eq("id", postId)
-          .single();
-
-        if (post) {
-          await supabase
+        }).then(() => {
+          // Increment post view count after insert
+          return supabase
             .from("posts")
-            .update({ views: (post.views || 0) + 1 })
-            .eq("id", postId);
-        }
+            .select("views")
+            .eq("id", postId)
+            .single();
+        }).then(({ data: post }) => {
+          if (post) {
+            supabase
+              .from("posts")
+              .update({ views: (post.views || 0) + 1 })
+              .eq("id", postId);
+          }
+        }).catch(() => {
+          // Silently fail - don't break the experience
+        });
       } else {
         // Fallback: use localStorage
         try {
