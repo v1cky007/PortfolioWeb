@@ -1,0 +1,250 @@
+/* ========================================
+   Theme Variables
+   ======================================== */
+:root {
+  --theme-bg: #ffffff;
+  --theme-bg-alt: #f8f9fa;
+  --theme-bg-card: #f1f3f5;
+  --theme-text: #1a1a2e;
+  --theme-text-secondary: #555;
+  --theme-text-muted: #888;
+  --theme-border: #e0e0e0;
+  --theme-accent: #BF00FF;
+  --theme-navbar: rgba(255, 255, 255, 0.92);
+}
+
+.dark {
+  --theme-bg: #000000;
+  --theme-bg-alt: #0a0a0a;
+  --theme-bg-card: #0e0e0e;
+  --theme-text: #ffffff;
+  --theme-text-secondary: #cccccc;
+  --theme-text-muted: #888888;
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-accent: #BF00FF;
+  --theme-navbar: rgba(0, 0, 0, 0.9);
+}
+
+body {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================================
+   Light Mode Overrides
+   Use html:not(.dark) to scope to <html>
+   not having .dark — otherwise descendants
+   always match :not(.dark) even when dark.
+   ======================================== */
+
+/* ---- Backgrounds ---- */
+html:not(.dark) .bg-black { background-color: #ffffff !important; }
+html:not(.dark) .bg-\[\#000\] { background-color: #ffffff !important; }
+html:not(.dark) .bg-\[\#0a0a0a\] { background-color: #f8f9fa !important; }
+html:not(.dark) .bg-\[\#0e0e0e\] { background-color: #f1f3f5 !important; }
+html:not(.dark) .bg-\[\#111\] { background-color: #f5f5f5 !important; }
+html:not(.dark) .bg-\[\#1a1a1a\] { background-color: #f0f0f0 !important; }
+html:not(.dark) .bg-black\/80 { background-color: rgba(255,255,255,0.8) !important; }
+html:not(.dark) .bg-black\/95 { background-color: rgba(255,255,255,0.95) !important; }
+html:not(.dark) .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+
+/* ---- Text colors ---- */
+html:not(.dark) .text-white { color: #1a1a2e !important; }
+html:not(.dark) .text-gray-300 { color: #555 !important; }
+html:not(.dark) .text-gray-400 { color: #666 !important; }
+html:not(.dark) .text-gray-500 { color: #888 !important; }
+html:not(.dark) .text-gray-600 { color: #999 !important; }
+html:not(.dark) .text-gray-900 { color: #1a1a2e !important; }
+
+/* ---- Hover states ---- */
+html:not(.dark) .hover\:text-white:hover { color: #1a1a2e !important; }
+html:not(.dark) .hover\:text-gray-400:hover { color: #555 !important; }
+
+/* ---- Borders ---- */
+html:not(.dark) .border-white\/10 { border-color: #e0e0e0 !important; }
+html:not(.dark) .border-white\/5 { border-color: #eee !important; }
+html:not(.dark) .border-purple-500\/20 { border-color: rgba(191,0,255,0.25) !important; }
+
+/* ---- Contact ---- */
+html:not(.dark) .contact-form-container { background-color: #f8f9fa !important; }
+html:not(.dark) .contact-form input,
+html:not(.dark) .contact-form textarea {
+  background-color: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #1a1a2e !important;
+}
+html:not(.dark) .contact-icon-box { background-color: rgba(191,0,255,0.08) !important; }
+
+/* ---- Project cards ---- */
+html:not(.dark) .project-card {
+  background-color: #f1f3f5 !important;
+  border-color: #e0e0e0 !important;
+}
+html:not(.dark) .project-card:hover {
+  box-shadow: 0 8px 30px rgba(191,0,255,0.12) !important;
+}
+
+/* ---- Feature cards (AboutMe) ---- */
+html:not(.dark) .feature-card {
+  border-color: #e0e0e0 !important;
+  background-color: #f8f9fa !important;
+}
+html:not(.dark) .feature-card .icon-box { background-color: rgba(191,0,255,0.08) !important; }
+html:not(.dark) .feature-card .icon { color: #BF00FF !important; }
+
+/* ---- Experience timeline ---- */
+html:not(.dark) .experience-card {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+  color: #1a1a2e !important;
+}
+html:not(.dark) .experience-bullets li { color: #555 !important; }
+html:not(.dark) .experience-tag {
+  background-color: rgba(191,0,255,0.08) !important;
+  border-color: rgba(191,0,255,0.2) !important;
+  color: #333 !important;
+}
+html:not(.dark) .timeline-date-badge {
+  background-color: #f1f3f5 !important;
+  border-color: #e0e0e0 !important;
+  color: #555 !important;
+}
+html:not(.dark) .timeline-node { background-color: #BF00FF !important; }
+html:not(.dark) .timeline-node-connector { background-color: #e0e0e0 !important; }
+
+/* ---- Education cards ---- */
+html:not(.dark) .edu-card {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+  color: #1a1a2e !important;
+}
+html:not(.dark) .edu-card-title { color: #1a1a2e !important; }
+html:not(.dark) .edu-institution { color: #666 !important; }
+html:not(.dark) .edu-desc { color: #888 !important; }
+html:not(.dark) .edu-year {
+  background-color: rgba(191,0,255,0.1) !important;
+  color: #BF00FF !important;
+}
+
+/* ---- Skills section ---- */
+html:not(.dark) .skill-card { border-color: #e0e0e0 !important; }
+html:not(.dark) .skill-bar-bg { background-color: #e9ecef !important; }
+html:not(.dark) .category-btn {
+  color: #666 !important;
+  border-color: #e0e0e0 !important;
+}
+html:not(.dark) .category-btn.active {
+  background-color: #BF00FF !important;
+  color: #fff !important;
+  border-color: #BF00FF !important;
+}
+
+/* ---- Modals ---- */
+html:not(.dark) .modal-panel {
+  background-color: #ffffff !important;
+  color: #1a1a2e !important;
+}
+html:not(.dark) .modal-topbar {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+  color: #1a1a2e !important;
+}
+html:not(.dark) .modal-topbar-label { color: #1a1a2e !important; }
+html:not(.dark) .modal-project-title { color: #1a1a2e !important; }
+html:not(.dark) .modal-project-subtitle { color: #555 !important; }
+html:not(.dark) .modal-block h3 { color: #1a1a2e !important; }
+html:not(.dark) .modal-block-text { color: #555 !important; }
+html:not(.dark) .stack-item-desc { color: #555 !important; }
+html:not(.dark) .stack-item-name { color: #1a1a2e !important; }
+html:not(.dark) .stack-item-line { background-color: #e0e0e0 !important; }
+html:not(.dark) .modal-feature-card {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+  color: #333 !important;
+}
+html:not(.dark) .modal-challenges-card {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+  color: #555 !important;
+}
+html:not(.dark) .modal-pill {
+  background-color: rgba(191,0,255,0.08) !important;
+  border-color: rgba(191,0,255,0.2) !important;
+  color: #BF00FF !important;
+}
+html:not(.dark) .modal-link-btn {
+  border-color: #e0e0e0 !important;
+  color: #333 !important;
+}
+html:not(.dark) .modal-link-btn--primary {
+  background-color: #BF00FF !important;
+  color: #fff !important;
+}
+html:not(.dark) .modal-overlay { background-color: rgba(0,0,0,0.3) !important; }
+html:not(.dark) .modal-close-btn { color: #666 !important; }
+html:not(.dark) .modal-close-btn:hover { color: #1a1a2e !important; }
+html:not(.dark) .modal-badge--status { color: #BF00FF !important; }
+html:not(.dark) .modal-badge--year { color: #888 !important; }
+html:not(.dark) .feature-card-check { color: #BF00FF !important; }
+
+/* ---- Buttons ---- */
+html:not(.dark) .btn-primary {
+  background-color: #BF00FF !important;
+  color: #fff !important;
+}
+html:not(.dark) .btn-outline {
+  border-color: #BF00FF !important;
+  color: #BF00FF !important;
+}
+html:not(.dark) .github-button {
+  background-color: #BF00FF !important;
+  color: #fff !important;
+}
+
+/* ---- Filter buttons ---- */
+html:not(.dark) .bg-transparent.text-gray-400.border-white\/10 {
+  color: #666 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ---- Alert popup ---- */
+html:not(.dark) .popup-alert { background-color: #fff !important; }
+html:not(.dark) .custom-alert-title { color: #2c7a7b !important; }
+html:not(.dark) .custom-alert-description { color: #285e61 !important; }
+
+/* ---- AboutMe text ---- */
+html:not(.dark) .about-text { color: #555 !important; }
+html:not(.dark) .about-text:hover { color: #1a1a2e !important; }
+
+/* ---- Project image overlay ---- */
+html:not(.dark) .project-image-overlay { background-color: rgba(0,0,0,0.3) !important; }
+
+/* ---- Sections ---- */
+html:not(.dark) .section-dark { background-color: #ffffff !important; }
+html:not(.dark) .text-themed { color: #1a1a2e !important; }
+html:not(.dark) .text-themed-secondary { color: #555 !important; }
+html:not(.dark) .text-themed-muted { color: #888 !important; }
+html:not(.dark) [data-aos] { color: #1a1a2e !important; }
+
+/* ---- GitHub contributions ---- */
+html:not(.dark) .rounded-xl.border.border-white\/10.bg-white\/5 {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ---- Testimonials ---- */
+html:not(.dark) .bg-white\/5.border.border-white\/10.rounded-2xl {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ---- Stat cards ---- */
+html:not(.dark) .rounded-2xl.bg-white\/5.border.border-white\/10 {
+  background-color: #f8f9fa !important;
+  border-color: #e0e0e0 !important;
+}
+html:not(.dark) .rounded-xl.bg-white\/5.border.border-white\/5 {
+  background-color: #f8f9fa !important;
+  border-color: #eee !important;
+}

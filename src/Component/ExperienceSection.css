@@ -43,11 +43,12 @@
 /* --- Section Container --- */
 .experience-section {
   padding: 100px 24px 120px;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
   font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Ambient glow background effect */
@@ -809,3 +810,31 @@
     line-height: 1.6;
   }
 }
+
+/* ========================================
+   Light Mode Overrides
+   ======================================== */
+html:not(.dark) .experience-title { color: #1a1a2e !important; }
+html:not(.dark) .experience-subtitle { color: #888 !important; }
+html:not(.dark) .experience-label { color: #BF00FF !important; }
+html:not(.dark) .experience-company { color: #1a1a2e !important; }
+html:not(.dark) .experience-role { color: #7c3aed !important; }
+html:not(.dark) .card-location-badge { color: #888 !important; background-color: #f1f3f5 !important; border-color: #e0e0e0 !important; }
+html:not(.dark) .experience-bullets li { color: #555 !important; }
+html:not(.dark) .experience-tag { background-color: rgba(191,0,255,0.08) !important; border-color: rgba(191,0,255,0.2) !important; color: #6b21a8 !important; }
+html:not(.dark) .timeline-date-badge { background-color: #f1f3f5 !important; border-color: #e0e0e0 !important; color: #555 !important; }
+html:not(.dark) .timeline-node { background-color: #BF00FF !important; }
+html:not(.dark) .timeline-node-connector { background-color: #e0e0e0 !important; }
+html:not(.dark) .experience-card { background-color: #f8f9fa !important; border-color: #e0e0e0 !important; }
+html:not(.dark) .experience-card .card-header { border-color: #e0e0e0 !important; }
+html:not(.dark) .experience-status { color: #BF00FF !important; }
+html:not(.dark) .status-dot { background-color: #BF00FF !important; }
+html:not(.dark) .experience-card .card-body { border-color: #e0e0e0 !important; }
+html:not(.dark) .experience-card .card-body::before { background-color: #e0e0e0 !important; }
+
+/* Education light mode */
+html:not(.dark) .edu-card { background-color: #f8f9fa !important; border-color: #e0e0e0 !important; color: #1a1a2e !important; }
+html:not(.dark) .edu-card-title { color: #1a1a2e !important; }
+html:not(.dark) .edu-institution { color: #666 !important; }
+html:not(.dark) .edu-desc { color: #888 !important; }
+html:not(.dark) .edu-year { background-color: rgba(191,0,255,0.1) !important; color: #BF00FF !important; }

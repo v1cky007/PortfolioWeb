@@ -3,6 +3,7 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { LenisContext } from "./LenisContext";
 import estateflowImg from "@/assets/Estateflow.png";
 import vortexplayImg from "@/assets/VotexPlay.png";
+import groceryImg from "@/assets/GroceryStore.png";
 import "./ProjectsSection.css";
 
 const projects = [
@@ -71,7 +72,7 @@ const projects = [
       "An e-commerce platform for groceries with secure payments, responsive UI/UX, and real-time order tracking.",
     longDescription:
       "A full-featured e-commerce platform specifically designed for grocery shopping. The application provides a seamless shopping experience with category-based browsing, smart search, and a streamlined checkout process powered by Stripe. Real-time order tracking keeps customers informed about their delivery status. The admin panel allows store managers to manage inventory, process orders, and view sales analytics. Built with a focus on security and performance.",
-    image: "/projects/grocery.png",
+    image: groceryImg,
     tags: ["React", "Node.js", "Stripe", "MongoDB"],
     stack: [
       { name: "React", category: "Frontend", description: "Dynamic UI with React Router and state management" },
@@ -305,6 +306,13 @@ const ProjectModal = ({ project, onClose }) => {
    ============================ */
 export const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const allTags = [...new Set(projects.flatMap((p) => p.tags))];
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.tags.includes(activeFilter));
 
   return (
     <section id="projects" className="projects-section">
@@ -317,8 +325,25 @@ export const ProjectsSection = () => {
           scalability, and creating seamless user experiences.
         </p>
 
+        {/* Filter bar */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {["All", ...allTags].map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setActiveFilter(tag)}
+              className={`px-3 py-1.5 text-xs rounded-full border transition-all duration-200 ${
+                activeFilter === tag
+                  ? "bg-[#BF00FF] text-white border-[#BF00FF]"
+                  : "bg-transparent text-gray-400 border-white/10 hover:border-[#BF00FF]/40 hover:text-white"
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
         <div className="projects-grid">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="project-card"
@@ -330,7 +355,7 @@ export const ProjectsSection = () => {
               }}
             >
               <div className="project-image-container">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={`${project.title} - ${project.description.split('.')[0]}`} loading="lazy" />
                 <div className="project-image-overlay">
                   <span className="project-view-btn">
                     View Details

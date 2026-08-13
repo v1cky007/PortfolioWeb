@@ -9,6 +9,7 @@ import { AuroraText } from "../components/magicui/aurora-text";
 import profileImage from "@/assets/profileImage.jpeg";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { useLenis } from "./LenisContext";
+import TypeWriter from "./TypeWriter";
 
 const Hero = () => {
   const lenis = useLenis();
@@ -23,7 +24,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full px-4 sm:px-6 py-16 sm:py-20 lg:py-28 text-white relative z-10 overflow-hidden">
+    <section className="w-full px-4 sm:px-6 py-16 sm:py-20 lg:py-28 relative z-10 overflow-hidden">
       {/* Content Container */}
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12 relative z-10">
         {/* Text Section */}
@@ -44,10 +45,12 @@ const Hero = () => {
             />
           </div>
 
-          <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">
-            Passionate developer crafting secure, scalable digital solutions with a
-            focus on performance and innovation. Explore my projects to see how
-            ideas become impactful real-world applications.
+          <p className="text-themed-secondary mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">
+            <TypeWriter
+              text="Passionate developer crafting secure, scalable digital solutions with a focus on performance and innovation."
+              speed={25}
+              delay={800}
+            />
           </p>
 
           <div className="about-buttons">
@@ -74,7 +77,7 @@ const Hero = () => {
               href="https://github.com/v1cky007"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white text-xl transition"
+              className="text-themed-muted hover:text-white text-xl transition"
             >
               <FaGithub />
             </a>
@@ -82,14 +85,14 @@ const Hero = () => {
               href="https://www.linkedin.com/in/m-vigneash-5aa770299"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-[#0e76a8] text-xl transition"
+              className="text-themed-muted hover:text-[#0e76a8] text-xl transition"
             >
               <FaLinkedin />
             </a>
             <a
               href="mailto:v1gneashm007@gmail.com"
-              className="text-gray-400 hover:text-[#EA4335] text-xl transition"
-              onClick={(e) => e.stopPropagation()}
+              className="text-themed-muted hover:text-[#EA4335] text-xl transition"
+              data-lenis-prevent
             >
               <HiOutlineMail />
             </a>
@@ -106,7 +109,7 @@ const Hero = () => {
           <div className="absolute top-0 left-0 w-full h-full rounded-full p-1">
             <img
               src={profileImage}
-              alt="Profile"
+              alt="M. Vigneash - Full-Stack Developer and Cybersecurity Specialist"
               className="rounded-full w-full h-full object-cover object-center"
             />
           </div>

@@ -30,17 +30,17 @@ const AboutMe = () => {
               </h3>
 
               <p className="about-text">
-                Hello! I’m <span className="text-white font-semibold">M. Vigneash</span>, a
+                Hello! I’m <span className="text-themed font-semibold">M. Vigneash</span>, a
                 <span className="text-[#BF00FF] font-medium"> Cybersecurity Enthusiast</span> and
                 <span className="text-[#BF00FF] font-medium"> Full-Stack Developer</span> with a strong foundation in ethical hacking, vulnerability assessment, and secure web application development.
               </p>
 
               <p className="about-text">
-                With hands-on experience in tools like Burp Suite, Wireshark, and Autopsy, I've interned at top organizations like <span className="text-white font-semibold">Cognizant</span>, <span className="text-white font-semibold">BPCL</span>, and <span className="text-white font-semibold">Livewire</span>, contributing to cybersecurity audits, digital transformation, and full-stack application development.
+                With hands-on experience in tools like Burp Suite, Wireshark, and Autopsy, I've interned at top organizations like <span className="text-themed font-semibold">Cognizant</span>, <span className="text-themed font-semibold">BPCL</span>, and <span className="text-themed font-semibold">Livewire</span>, contributing to cybersecurity audits, digital transformation, and full-stack application development.
               </p>
 
               <p className="about-text">
-                I’ve developed projects including <span className="text-white font-semibold">EstateFlow</span>, an AI-driven house brokerage platform, and <span className="text-white font-semibold">Vortex Play</span>, an interactive cloud gaming application. My aim is to merge technical expertise with creative problem-solving to deliver real-world impact.
+                I’ve developed projects including <span className="text-themed font-semibold">EstateFlow</span>, an AI-driven house brokerage platform, and <span className="text-themed font-semibold">Vortex Play</span>, an interactive cloud gaming application. My aim is to merge technical expertise with creative problem-solving to deliver real-world impact.
               </p>
 
               <BoxReveal>
@@ -81,7 +81,7 @@ const AboutMe = () => {
                       <Icon className="icon h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     <div>
-                      <h4 className="feature-card-title">{title}</h4>
+                      <h3 className="feature-card-title">{title}</h3>
                       <p className="feature-card-desc">{desc}</p>
                     </div>
                   </div>

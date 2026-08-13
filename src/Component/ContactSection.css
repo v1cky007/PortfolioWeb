@@ -26,11 +26,12 @@
 /* ---------------------------------- */
 .contact-section {
   padding: 6rem 1rem;
-  background-color: #000;
-  color: white;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact-container {
@@ -114,11 +115,12 @@
 /* Contact Form Styles */
 /* ---------------------------------- */
 .contact-form-container {
-  background-color: #111;
+  background-color: var(--theme-bg-card);
   padding: 2rem;
   border-radius: 0.75rem;
   box-shadow: 0 0 20px rgba(191, 0, 255, 0.15);
   animation: fadeInUp 1.4s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form label {
@@ -131,11 +133,11 @@
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  color: white;
+  background-color: var(--theme-bg);
+  border: 1px solid var(--theme-border);
+  color: var(--theme-text);
   border-radius: 0.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-form input:focus,

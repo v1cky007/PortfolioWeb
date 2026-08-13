@@ -24,10 +24,10 @@ export const ContactSection = () => {
 
     emailjs
       .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_9mmjcge",
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_wynb5kc",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "gNzwjp2xSRH6Nl2F1"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -170,10 +170,7 @@ export const ContactSection = () => {
         </div>
       </div>
 
-      <footer className="contact-footer" role="contentinfo">
-        <p>&copy; {new Date().getFullYear()} M. Vigneash. All rights reserved.</p>
-        <p>Built with React &amp; Tailwind CSS</p>
-      </footer>
+
     </section>
   );
 };

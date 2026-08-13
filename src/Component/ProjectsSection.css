@@ -4,11 +4,12 @@
 
 .projects-section {
   padding: 6rem 1.5rem;
-  background-color: #000;
-  color: white;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
   position: relative;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .projects-container {
@@ -55,11 +56,11 @@
 
 /* --- Cards --- */
 .project-card {
-  background-color: #0e0e0e;
+  background-color: var(--theme-bg-card);
   border: 1px solid rgba(191, 0, 255, 0.25);
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.3s ease;
   cursor: pointer;
 }
 
@@ -976,3 +977,37 @@
     font-size: 0.8rem;
   }
 }
+
+/* Light Mode Overrides */
+html:not(.dark) .projects-heading { color: #1a1a2e !important; }
+html:not(.dark) .projects-subtext { color: #888 !important; }
+html:not(.dark) .project-title { color: #1a1a2e !important; }
+html:not(.dark) .project-description { color: #666 !important; }
+html:not(.dark) .project-card:hover .project-description { color: #444 !important; }
+html:not(.dark) .project-tag { background-color: rgba(191,0,255,0.08) !important; border-color: rgba(191,0,255,0.2) !important; color: #6b21a8 !important; }
+html:not(.dark) .project-link { color: #666 !important; border-color: #e0e0e0 !important; }
+html:not(.dark) .project-link:hover { color: #BF00FF !important; }
+html:not(.dark) .project-view-btn { color: #fff !important; }
+html:not(.dark) .github-button { background-color: #BF00FF !important; color: #fff !important; }
+html:not(.dark) .modal-panel { background-color: #fff !important; color: #1a1a2e !important; }
+html:not(.dark) .modal-topbar { background-color: #f8f9fa !important; color: #1a1a2e !important; border-color: #e0e0e0 !important; }
+html:not(.dark) .modal-topbar-label { color: #1a1a2e !important; }
+html:not(.dark) .modal-project-title { color: #1a1a2e !important; }
+html:not(.dark) .modal-project-subtitle { color: #666 !important; }
+html:not(.dark) .modal-block h3 { color: #1a1a2e !important; }
+html:not(.dark) .modal-block-text { color: #555 !important; }
+html:not(.dark) .modal-pill { background-color: rgba(191,0,255,0.08) !important; border-color: rgba(191,0,255,0.2) !important; color: #6b21a8 !important; }
+html:not(.dark) .modal-link-btn { border-color: #e0e0e0 !important; color: #333 !important; background-color: transparent !important; }
+html:not(.dark) .modal-link-btn--primary { background-color: #BF00FF !important; color: #fff !important; }
+html:not(.dark) .modal-stack-item { border-color: #e0e0e0 !important; }
+html:not(.dark) .stack-item-name { color: #1a1a2e !important; }
+html:not(.dark) .stack-item-desc { color: #666 !important; }
+html:not(.dark) .stack-item-line { background-color: #e0e0e0 !important; }
+html:not(.dark) .modal-feature-card { background-color: #f8f9fa !important; border-color: #e0e0e0 !important; color: #333 !important; }
+html:not(.dark) .modal-challenges-card { background-color: #f8f9fa !important; border-color: #e0e0e0 !important; color: #555 !important; }
+html:not(.dark) .feature-card-check { color: #BF00FF !important; }
+html:not(.dark) .stack-item-ring { border-color: inherit !important; }
+html:not(.dark) .modal-badge--status { color: #BF00FF !important; }
+html:not(.dark) .modal-badge--year { color: #888 !important; }
+html:not(.dark) .modal-close-btn { color: #666 !important; }
+html:not(.dark) .modal-close-btn:hover { color: #1a1a2e !important; }

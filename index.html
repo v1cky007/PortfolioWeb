@@ -35,6 +35,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
+    <!-- Preconnect for external CDNs -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+
     <!-- Manifest -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#000000" />
@@ -43,7 +47,6 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.emailjs.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.emailjs.com; frame-src 'none';" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -102,6 +105,27 @@
     </script>
   </head>
   <body>
+    <!-- Force dark mode before React loads to prevent white flash -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        if (!saved || saved === 'dark') {
+          document.documentElement.classList.add('dark');
+          if (!saved) localStorage.setItem('theme', 'dark');
+        }
+      })();
+    </script>
+    <!-- Anti-inspection: block right-click, common devtools shortcuts -->
+    <script>
+      (function() {
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'F12') { e.preventDefault(); }
+          if (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c'].indexOf(e.key) !== -1) { e.preventDefault(); }
+          if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); }
+        });
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

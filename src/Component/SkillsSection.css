@@ -3,9 +3,10 @@
   flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .left-skills {
@@ -314,3 +315,13 @@
     font-size: 0.75rem;
   }
 }
+
+/* Light Mode Overrides */
+html:not(.dark) .skills-wrapper { background-color: #ffffff !important; color: #1a1a2e !important; }
+html:not(.dark) .progress-title { color: #1a1a2e !important; }
+html:not(.dark) .skill-name { color: #1a1a2e !important; }
+html:not(.dark) .skill-percent { color: #BF00FF !important; }
+html:not(.dark) .skill-bar-bg { background-color: #e9ecef !important; }
+html:not(.dark) .skill-card { border-color: #e0e0e0 !important; background-color: transparent !important; }
+html:not(.dark) .category-btn { color: #666 !important; border-color: #e0e0e0 !important; }
+html:not(.dark) .category-btn.active { background-color: #BF00FF !important; color: #fff !important; border-color: #BF00FF !important; }
