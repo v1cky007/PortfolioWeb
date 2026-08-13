@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { supabase, isSupabaseConfigured } from "@/lib/supabase";
+import { supabase, isSupabaseConfigured, checkTablesExist } from "@/lib/supabase";
 
 /**
  * Fetch blog posts from Supabase.
- * Falls back to static blogData if Supabase is not configured.
+ * Falls back to static blogData if Supabase is not configured or tables don't exist.
  */
 export function useBlogPosts() {
   const [posts, setPosts] = useState([]);
@@ -12,6 +12,15 @@ export function useBlogPosts() {
   useEffect(() => {
     async function fetchPosts() {
       if (!isSupabaseConfigured()) {
+        const { default: staticPosts } = await import("@/Component/blogData");
+        setPosts(staticPosts);
+        setLoading(false);
+        return;
+      }
+
+      // Check if tables exist before querying
+      const tablesExist = await checkTablesExist();
+      if (!tablesExist) {
         const { default: staticPosts } = await import("@/Component/blogData");
         setPosts(staticPosts);
         setLoading(false);
@@ -63,6 +72,16 @@ export function useBlogPost(postId) {
 
     async function fetchPost() {
       if (!isSupabaseConfigured()) {
+        const { default: staticPosts } = await import("@/Component/blogData");
+        const staticPost = staticPosts.find((p) => p.id === postId);
+        setPost(staticPost || null);
+        setLoading(false);
+        return;
+      }
+
+      // Check if tables exist before querying
+      const tablesExist = await checkTablesExist();
+      if (!tablesExist) {
         const { default: staticPosts } = await import("@/Component/blogData");
         const staticPost = staticPosts.find((p) => p.id === postId);
         setPost(staticPost || null);

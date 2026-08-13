@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { supabase, isSupabaseConfigured } from "@/lib/supabase";
+import { supabase, isSupabaseConfigured, checkTablesExist } from "@/lib/supabase";
 
 /**
  * Record a page view in Supabase when a blog post is visited.
- * Falls back to localStorage if Supabase is not configured.
+ * Falls back to localStorage if Supabase is not configured or tables don't exist.
  */
 export function useRecordView(postId) {
   useEffect(() => {
@@ -17,7 +17,7 @@ export function useRecordView(postId) {
     if (sessionStorage.getItem(key)) return;
 
     async function record() {
-      if (isSupabaseConfigured()) {
+      if (isSupabaseConfigured() && (await checkTablesExist())) {
         // Record in Supabase
         await supabase.from("page_views").insert({
           post_id: postId,
