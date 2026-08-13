@@ -13,7 +13,6 @@ import Lenis from '@studio-freight/lenis';
 import ExperienceSection from './Component/ExperienceSection';
 import ScrollProgress from './Component/ScrollProgress';
 import StatsSection from './Component/StatsSection';
-import CertificationsSection from './Component/CertificationsSection';
 import { CinematicFooter } from './components/ui/motion-footer';
 import SplashScreen from './Component/SplashScreen';
 import ErrorBoundary from './Component/ErrorBoundary';
@@ -77,8 +76,6 @@ function PortfolioPage() {
           <StatsSection />
           <SectionDivider variant="wave" />
           <SkillsSection />
-          <SectionDivider variant="wave" />
-          <CertificationsSection />
           <SectionDivider />
           <ProjectsSection />
           <SectionDivider />
