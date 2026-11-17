@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Lock, Eye, EyeOff, AlertTriangle } from "lucide-react";
-import { verifyPassword, checkRateLimit, setAuthorized, isAuthorized, isSessionValid } from "@/lib/security";
+import { checkRateLimit } from "@/lib/security";
+import { signInAdmin, getAdminSession, isAdminAuthConfigured } from "@/lib/auth";
 import logo from "@/assets/logo.png";
 
 export default function AdminLogin() {
@@ -14,10 +15,12 @@ export default function AdminLogin() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // If already authorized and session valid, go to dashboard
-    if (isAuthorized() && isSessionValid()) {
-      navigate("/v1cky", { replace: true });
-    }
+    // If a Supabase admin session already exists, go straight to the dashboard
+    let cancelled = false;
+    getAdminSession().then((session) => {
+      if (!cancelled && session) navigate("/v1cky", { replace: true });
+    });
+    return () => { cancelled = true; };
   }, [navigate]);
 
   // Cooldown timer
@@ -41,6 +44,12 @@ export default function AdminLogin() {
     setError("");
     setLoading(true);
 
+    if (!isAdminAuthConfigured()) {
+      setError("Admin login is not configured. Set up Supabase and VITE_ADMIN_EMAIL.");
+      setLoading(false);
+      return;
+    }
+
     // Check rate limit
     const rl = checkRateLimit();
     if (rl.locked) {
@@ -50,17 +59,15 @@ export default function AdminLogin() {
       return;
     }
 
-    // Small delay to prevent timing attacks
-    await new Promise((r) => setTimeout(r, 300 + Math.random() * 200));
-
-    if (verifyPassword(password)) {
-      setAuthorized();
+    try {
+      await signInAdmin(password);
       setPassword("");
       navigate("/v1cky", { replace: true });
-    } else {
+    } catch {
       setError(`Invalid password. ${rl.attemptsLeft || 0} attempts remaining.`);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (

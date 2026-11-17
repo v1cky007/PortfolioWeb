@@ -8,7 +8,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { isAuthorized, isSessionValid, clearAuthorization } from "@/lib/security";
+import { getAdminSession, onAdminAuthChange, signOutAdmin } from "@/lib/auth";
 import logo from "@/assets/logo.png";
 
 const NAV_ITEMS = [
@@ -24,15 +24,30 @@ export default function AdminLayout({ children }) {
   const [authorized, setAuthorizedState] = useState(false);
 
   useEffect(() => {
-    const auth = isAuthorized() && isSessionValid();
-    setAuthorizedState(auth);
-    if (!auth) {
-      navigate("/gate", { replace: true });
-    }
-  }, [navigate, location]);
+    let cancelled = false;
 
-  const handleLogout = () => {
-    clearAuthorization();
+    getAdminSession().then((session) => {
+      if (cancelled) return;
+      setAuthorizedState(!!session);
+      if (!session) navigate("/gate", { replace: true });
+    });
+
+    // Kick the user out if the Supabase session ends (sign-out, expiry, other tab)
+    const unsubscribe = onAdminAuthChange((session) => {
+      if (!session) {
+        setAuthorizedState(false);
+        navigate("/gate", { replace: true });
+      }
+    });
+
+    return () => {
+      cancelled = true;
+      unsubscribe();
+    };
+  }, [navigate]);
+
+  const handleLogout = async () => {
+    await signOutAdmin();
     navigate("/gate", { replace: true });
   };
 
